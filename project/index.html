@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Homepage</title>
+    <!-- Bootstrap core CSS
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  -->
+
+    <!-- Custom styles for this template -->
+    <link href="css/blog-home.css" rel="stylesheet">
+    <link href="css/homepage.css" rel="stylesheet">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <link href="vendor/semantic/dist/semantic.min.css" rel="stylesheet" type="text/css">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/semantic/dist/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/reset.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/site.css">
+
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/container.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/grid.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/header.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/image.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/menu.css">
+
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/divider.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/dropdown.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/segment.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/button.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/list.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/icon.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/sidebar.css">
+      <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/components/transition.css">
+
+      <style type="text/css">
+        .hidden.menu {
+          display: none;
+        }
+        .masthead.segment {
+          min-height: 700px;
+          padding: 1em 0em;
+        }
+        .masthead .logo.item img {
+          margin-right: 1em;
+        }
+        .masthead .ui.menu .ui.button {
+          margin-left: 0.5em;
+        }
+        .masthead h1.ui.header {
+          margin-top: 3em;
+          margin-bottom: 0em;
+          font-size: 4em;
+          font-weight: normal;
+        }
+        .masthead h2 {
+          font-size: 1.7em;
+          font-weight: normal;
+        }
+        .ui.vertical.stripe {
+          padding: 8em 0em;
+        }
+        .ui.vertical.stripe h3 {
+          font-size: 2em;
+        }
+        .ui.vertical.stripe .button + h3,
+        .ui.vertical.stripe p + h3 {
+          margin-top: 3em;
+        }
+        .ui.vertical.stripe .floated.image {
+          clear: both;
+        }
+        .ui.vertical.stripe p {
+          font-size: 1.33em;
+        }
+        .ui.vertical.stripe .horizontal.divider {
+          margin: 3em 0em;
+        }
+        .quote.stripe.segment {
+          padding: 0em;
+        }
+        .quote.stripe.segment .grid .column {
+          padding-top: 5em;
+          padding-bottom: 5em;
+        }
+        .footer.segment {
+          padding: 5em 0em;
+        }
+        .secondary.pointing.menu .toc.item {
+          display: none;
+        }
+        @media only screen and (max-width: 700px) {
+          .ui.fixed.menu {
+            display: none !important;
+          }
+          .secondary.pointing.menu .item,
+          .secondary.pointing.menu .menu {
+            display: none;
+          }
+          .secondary.pointing.menu .toc.item {
+            display: block;
+          }
+          .masthead.segment {
+            min-height: 350px;
+          }
+          .masthead h1.ui.header {
+            font-size: 2em;
+            margin-top: 1.5em;
+          }
+          .masthead h2 {
+            margin-top: 0.5em;
+            font-size: 1.5em;
+          }
+        }
+      </style>
+
+      <script src="vendor/semantic/dist/components/visibility.js"></script>
+      <script src="vendor/semantic/dist/components/sidebar.js"></script>
+      <script src="vendor/semantic/dist/components/transition.js"></script>
+      <script>
+      $(document)
+        .ready(function() {
+          // fix menu when passed
+          $('.masthead')
+            .visibility({
+              once: false,
+              onBottomPassed: function() {
+                $('.fixed.menu').transition('fade in');
+              },
+              onBottomPassedReverse: function() {
+                $('.fixed.menu').transition('fade out');
+              }
+            })
+          ;
+          $(document).find('button').on('click',function(event){
+            window.localStorage.value=event.target.innerText;
+            window.location.href='authorlist.html'
+          });
+          // create sidebar and attach to menu open
+          $('.ui.sidebar')
+            .sidebar('attach events', '.toc.item')
+          ;
+        })
+      ;
+      </script>
+  </head>
+  <body>
+    <div class="ui large top fixed hidden menu">
+      <div class="ui container">
+        <a class="active item">Home</a>
+
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="ui vertical inverted sidebar menu">
+      <a class="active item">Home</a>
+
+    </div>
+
+
+    <!-- Page Contents -->
+    <div class="pusher">
+      <div class="ui inverted vertical masthead center aligned segment">
+
+        <div class="ui container">
+          <div class="ui inverted large secondary inverted pointing menu">
+            <a class="toc item">
+              <i class="sidebar icon"></i>
+            </a>
+            <a href ="index.html" class="active item" style="color: black !important;">Home</a>
+
+          </div>
+        </div>
+
+      <div class="five ui buttons" style="padding-top: 100px;">
+            <button class="ui blue basic button" >A</button>
+            <button class="ui blue basic button" >B</button>
+            <button class="ui blue basic button" >C</button>
+            <button class="ui blue basic button" >D</button>
+            <button class="ui blue basic button" >E</button>
+    </div>
+    <div class="five ui buttons">
+            <button class="ui green basic button">F</button>
+            <button class="ui green  basic button">G</button>
+            <button class="ui green  basic button">G</button>
+            <button class="ui green  basic button">I</button>
+            <button class="ui green  basic button">J</button>
+    </div>
+    <div class="five ui buttons">
+            <button class="ui red basic button">K</button>
+            <button class="ui red basic button">L</button>
+            <button class="ui red basic button">M</button>
+            <button class="ui red basic button">N</button>
+            <button class="ui red basic button">O</button>
+    </div>
+    <div class="five ui buttons">
+            <button class="ui yellow basic button">P</button>
+            <button class="ui yellow basic button">Q</button>
+            <button class="ui yellow basic button">R</button>
+            <button class="ui yellow basic button">S</button>
+            <button class="ui yellow basic button">T</button>
+    </div>
+    <div class="five ui buttons">
+            <button class="ui purple basic button">U</button>
+            <button class="ui purple basic button">V</button>
+            <button class="ui purple basic button">W</button>
+            <button class="ui purple basic button">X</button>
+            <button class="ui purple basic button">Y</button>
+
+        </div>
+        <div class="one ui buttons">
+                <button class="ui yellow basic button">Z</button>
+            </div>
+
+      </div>
+
+
+
+
+      <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+          <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide column">
+              <h4 class="ui inverted header">About</h4>
+              <div class="ui inverted link list">
+                <a href="#" class="item">Sitemap</a>
+                <a href="#" class="item">Contact Us</a>
+              </div>
+            </div>
+            <div class="three wide column">
+              <h4 class="ui inverted header">Services</h4>
+              <div class="ui inverted link list">
+                <a href="#" class="item">New Publications</a>
+                <a href="#" class="item">Venue</a>
+              </div>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
